@@ -121,6 +121,8 @@ You can use the Express router that is bundled with this module to answer calls 
 
 ```js
 app.use('/s3', require('react-s3-uploader/s3router')({
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID, // optional you can set set your AWS_ACCESS_KEY_ID by ENV
+    secretAccessKey: process.env.SECRET_ACCESS_KEY_ID, // optional you can set your AWS_SECRET_ACCESS_KEY by ENV
     bucket: "MyS3Bucket",
     region: 'us-east-1', //optional
     signatureVersion: 'v4', //optional (use for some amazon regions: frankfurt and others)
