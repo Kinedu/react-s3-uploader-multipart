@@ -1,6 +1,6 @@
 {
   "name": "react-s3-uploader-multipart",
-  "version": "4.8.1",
+  "version": "4.8.2",
   "description": "React component that renders a file input and automatically uploads to an S3 bucket",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   "dependencies": {
     "aws-sdk": "2.x",
     "create-react-class": "^15.5.2",
-    "evaporate": "2.1.4",
+    "evaporate": "https://github.com/Kinedu/EvaporateJS#2.1.5",
     "object-assign": "^2.0.0",
     "prop-types": "^15.5.8",
     "uuid": "^3.1.0"
