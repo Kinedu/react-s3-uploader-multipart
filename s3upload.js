@@ -63,6 +63,7 @@ S3Upload.prototype.uploadToS3 = function(file) {
     var evaporateOptions = Object.assign(this.evaporateOptions, {
         signerUrl: this.signingUrl
     });
+    console.log('s3upload:uploadToS3', evaporateOptions, file);
     return Evaporate.create(evaporateOptions).then(function(evaporate){
       var addConfig = {
         name: this.s3path + this.scrubFilename(file.name),
