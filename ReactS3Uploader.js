@@ -33,7 +33,7 @@ var ReactS3Uploader = createReactClass({
         s3path: PropTypes.string,
         inputRef: PropTypes.func,
         autoUpload: PropTypes.bool,
-        switchEvaporateOptions: PropTypes.func,
+        processEvaporateOptions: PropTypes.func,
         evaporateOptions: PropTypes.object.isRequired,
     },
 
@@ -59,7 +59,7 @@ var ReactS3Uploader = createReactClass({
             },
             s3path: '',
             autoUpload: true,
-            switchEvaporateOptions: function (options, file) {
+            processEvaporateOptions: function (options, file) {
                 return options;
             }
         };
@@ -83,7 +83,7 @@ var ReactS3Uploader = createReactClass({
             contentDisposition: this.props.contentDisposition,
             server: this.props.server,
             scrubFilename: this.props.scrubFilename,
-            switchEvaporateOptions: this.props.switchEvaporateOptions,
+            processEvaporateOptions: this.props.processEvaporateOptions,
             s3path: this.props.s3path
         });
     },
