@@ -34,6 +34,10 @@ S3Upload.prototype.scrubFilename = function(filename) {
     return filename.replace(/[^\w\d_\-\.]+/ig, '');
 };
 
+S3Upload.prototype.processEvaporateOptions = function(defaultOptions, file) {
+    return defaultOptions;
+};
+
 function S3Upload(options) {
     if (options == null) {
         options = {};
@@ -63,7 +67,7 @@ S3Upload.prototype.uploadToS3 = function(file) {
     var evaporateOptions = Object.assign(this.evaporateOptions, {
         signerUrl: this.signingUrl
     });
-    return Evaporate.create(evaporateOptions).then(function(evaporate){
+    return Evaporate.create(this.processEvaporateOptions(evaporateOptions, file)).then(function(evaporate){
       var addConfig = {
         name: this.s3path + this.scrubFilename(file.name),
         file: file,
